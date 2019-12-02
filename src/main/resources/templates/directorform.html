@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Director Form</h1>
+<form action = "#" th:action="@{/process}" th:object="${director}" method="post">
+    <input type ="hidden" th:field="*{id}" />
+    Name: <input type ="text" th:field="*{name}" />
+    Genre: <input type ="text" th:field="*{genre}" />
+    <br/>
+    <input type ="submit" value = "Submit"/>
+</form>
+
+
+</body>
+</html>
