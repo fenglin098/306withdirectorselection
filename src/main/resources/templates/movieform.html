@@ -6,13 +6,13 @@
 </head>
 <body>
 <h1>Movie Form</h1>
-<form action = "#" th:action="@{/process}" th:object="${movie}" method="post">
+<form action = "#" th:action="@{/processmovie}" th:object="${movie}" method="post">
     <input type ="hidden" th:field="*{id}" />
     Title: <input type ="text" th:field="*{title}" />
     Year: <input type ="number" th:field="*{year}" />
     Description: <input type = "text" th:field="*{description}" />
-    Director: <select >
-    <option th:each="d:${#directors.id}" th:value="${d}" th:text="${d}"></option>
+    Director: <select th:field="*{director.id}">
+    <option th:each="d:${directors}" th:value="${d.id}" th:text="${d.name}"></option>
 </select>
     <br/>
     <input type ="submit" value = "Submit"/>
